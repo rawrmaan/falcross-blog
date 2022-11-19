@@ -1,263 +1,509 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Introducing RESTyped: End-to-end typing for REST APIs with TypeScript</title>
+    <title>
+      Introducing RESTyped: End-to-end typing for REST APIs with TypeScript
+    </title>
     <meta name="description" content="" />
 
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="../favicon.ico" />
 
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css%3Fv=91b48e4ba8.css" />
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../assets/css/screen.css%3Fv=91b48e4ba8.css"
+    />
 
     <link rel="canonical" href="index.html" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <link rel="amphtml" href="amp/index.html" />
-    
+
     <meta property="og:site_name" content="Falcross Blog" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Introducing RESTyped: End-to-end typing for REST APIs with TypeScript" />
-    <meta property="og:description" content="Typescript is a one-way street: Once you start using it, it&#x27;s hard to go back to plain JS. In fact, you&#x27;ll probably decide to write your entire application in TypeScript. After happily typing all of your models, you notice that there&#x27;s a disconnect: Your types don&#x27;t make it over the" />
-    <meta property="og:url" content="https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/" />
-    <meta property="article:published_time" content="2017-12-14T18:52:00.000Z" />
+    <meta
+      property="og:title"
+      content="Introducing RESTyped: End-to-end typing for REST APIs with TypeScript"
+    />
+    <meta
+      property="og:description"
+      content="Typescript is a one-way street: Once you start using it, it&#x27;s hard to go back to plain JS. In fact, you&#x27;ll probably decide to write your entire application in TypeScript. After happily typing all of your models, you notice that there&#x27;s a disconnect: Your types don&#x27;t make it over the"
+    />
+    <meta
+      property="og:url"
+      content="https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/"
+    />
+    <meta
+      property="article:published_time"
+      content="2017-12-14T18:52:00.000Z"
+    />
     <meta property="article:modified_time" content="2017-12-18T16:58:53.000Z" />
     <meta property="article:author" content="https://www.facebook.com/armana" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Introducing RESTyped: End-to-end typing for REST APIs with TypeScript" />
-    <meta name="twitter:description" content="Typescript is a one-way street: Once you start using it, it&#x27;s hard to go back to plain JS. In fact, you&#x27;ll probably decide to write your entire application in TypeScript. After happily typing all of your models, you notice that there&#x27;s a disconnect: Your types don&#x27;t make it over the" />
-    <meta name="twitter:url" content="https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/" />
+    <meta
+      name="twitter:title"
+      content="Introducing RESTyped: End-to-end typing for REST APIs with TypeScript"
+    />
+    <meta
+      name="twitter:description"
+      content="Typescript is a one-way street: Once you start using it, it&#x27;s hard to go back to plain JS. In fact, you&#x27;ll probably decide to write your entire application in TypeScript. After happily typing all of your models, you notice that there&#x27;s a disconnect: Your types don&#x27;t make it over the"
+    />
+    <meta
+      name="twitter:url"
+      content="https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/"
+    />
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Arman Dezfuli-Arjomandi" />
     <meta name="twitter:creator" content="@rawrmaan" />
-    
+
     <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "publisher": {
-        "@type": "Organization",
-        "name": "Falcross Blog",
-        "logo": "https://www.falcross.com/static/images/logo-blog.png"
-    },
-    "author": {
-        "@type": "Person",
-        "name": "Arman Dezfuli-Arjomandi",
-        "image": {
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Falcross Blog",
+          "logo": "https://www.falcross.com/static/images/logo-blog.png"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Arman Dezfuli-Arjomandi",
+          "image": {
             "@type": "ImageObject",
             "url": "//www.gravatar.com/avatar/b2ef4ee4f90da54c5ad156e14d2cd6a5?s=250&d=mm&r=x",
             "width": 250,
             "height": 250
-        },
-        "url": "https://blog.falcross.com/author/arman/",
-        "sameAs": [
+          },
+          "url": "https://blog.falcross.com/author/arman/",
+          "sameAs": [
             "https://www.rawrmaan.com/",
             "https://www.facebook.com/armana",
             "https://twitter.com/rawrmaan"
-        ]
-    },
-    "headline": "Introducing RESTyped: End-to-end typing for REST APIs with TypeScript",
-    "url": "https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/",
-    "datePublished": "2017-12-14T18:52:00.000Z",
-    "dateModified": "2017-12-18T16:58:53.000Z",
-    "description": "Typescript is a one-way street: Once you start using it, it&#x27;s hard to go back to plain JS. In fact, you&#x27;ll probably decide to write your entire application in TypeScript. After happily typing all of your models, you notice that there&#x27;s a disconnect: Your types don&#x27;t make it over the",
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://blog.falcross.com"
-    }
-}
+          ]
+        },
+        "headline": "Introducing RESTyped: End-to-end typing for REST APIs with TypeScript",
+        "url": "https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/",
+        "datePublished": "2017-12-14T18:52:00.000Z",
+        "dateModified": "2017-12-18T16:58:53.000Z",
+        "description": "Typescript is a one-way street: Once you start using it, it&#x27;s hard to go back to plain JS. In fact, you&#x27;ll probably decide to write your entire application in TypeScript. After happily typing all of your models, you notice that there&#x27;s a disconnect: Your types don&#x27;t make it over the",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://blog.falcross.com"
+        }
+      }
     </script>
 
     <meta name="generator" content="Ghost 0.11" />
-    <link rel="alternate" type="application/rss+xml" title="Falcross Blog" href="../rss/index.html" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49959787-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Falcross Blog"
+      href="../rss/index.html"
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-49959787-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'UA-49959787-1');
-</script>
-</head>
-<body class="post-template nav-closed">
-
+      gtag("config", "UA-49959787-1");
+    </script>
+  </head>
+  <body class="post-template nav-closed">
     <div class="nav">
-    <h3 class="nav-title">Menu</h3>
-    <a href="index.html#" class="nav-close">
+      <h3 class="nav-title">Menu</h3>
+      <a href="index.html#" class="nav-close">
         <span class="hidden">Close</span>
-    </a>
-    <ul>
-            <li class="nav-home"><a href="../index.html">Home</a></li>
-            <li class="nav-falcross-website"><a href="https://www.falcross.com/">Falcross Website</a></li>
-    </ul>
-        <a class="subscribe-button icon-feed" href="../rss/index.html">Subscribe</a>
-</div>
-<span class="nav-cover"></span>
-
+      </a>
+      <ul>
+        <li class="nav-home"><a href="../index.html">Home</a></li>
+        <li class="nav-falcross-website">
+          <a href="https://www.falcross.com/">Falcross Website</a>
+        </li>
+      </ul>
+      <a class="subscribe-button icon-feed" href="../rss/index.html"
+        >Subscribe</a
+      >
+    </div>
+    <span class="nav-cover"></span>
 
     <div class="site-wrapper">
+      <header class="main-header post-head no-cover">
+        <nav class="main-nav clearfix">
+          <a class="blog-logo" href="../index.html"
+            ><img
+              src="https://www.falcross.com/static/images/logo-blog.png"
+              alt="Falcross Blog"
+          /></a>
+          <a class="menu-button icon-menu" href="index.html#"
+            ><span class="word">Menu</span></a
+          >
+        </nav>
+      </header>
 
-        
-
-
-<header class="main-header post-head no-cover">
-    <nav class="main-nav  clearfix">
-        <a class="blog-logo" href="../index.html"><img src="https://www.falcross.com/static/images/logo-blog.png" alt="Falcross Blog" /></a>
-            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
-    </nav>
-</header>
-
-<main class="content" role="main">
-    <article class="post">
-
-        <header class="post-header">
-            <h1 class="post-title">Introducing RESTyped: End-to-end typing for REST APIs with TypeScript</h1>
+      <main class="content" role="main">
+        <article class="post">
+          <header class="post-header">
+            <h1 class="post-title">
+              Introducing RESTyped: End-to-end typing for REST APIs with
+              TypeScript
+            </h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2017-12-14">14 December 2017</time> 
+              <time class="post-date" datetime="2017-12-14"
+                >14 December 2017</time
+              >
             </section>
-        </header>
+          </header>
 
-        <section class="post-content">
-            <p><img src="https://s3.amazonaws.com/falcross-blog-images/2017/12/logo-padded.png" alt="" /></p>
+          <section class="post-content">
+            <p>
+              <img
+                src="https://s3.amazonaws.com/falcross-blog-images/2017/12/logo-padded.png"
+                alt=""
+              />
+            </p>
 
-<p>Typescript is a one-way street: Once you start using it, it's hard to go back to plain JS. In fact, you'll probably decide to write your entire application in TypeScript.</p>
+            <p>
+              Typescript is a one-way street: Once you start using it, it's hard
+              to go back to plain JS. In fact, you'll probably decide to write
+              your entire application in TypeScript.
+            </p>
 
-<p>After happily typing all of your models, you notice that there's a disconnect: Your types don't make it over the wire! Neither the server or client have any information about what types HTTP requests or responses should be.</p>
+            <p>
+              After happily typing all of your models, you notice that there's a
+              disconnect: Your types don't make it over the wire! Neither the
+              server or client have any information about what types HTTP
+              requests or responses should be.
+            </p>
 
-<p>RESTyped was designed to bridge the gap by creating an easy way to share types between your API server and any public or private clients.</p>
+            <p>
+              RESTyped was designed to bridge the gap by creating an easy way to
+              share types between your API server and any public or private
+              clients.
+            </p>
 
-<h3 id="stronglytypedapicalls">Strongly typed API calls</h3>
+            <h3 id="stronglytypedapicalls">Strongly typed API calls</h3>
 
-<p><img src="https://s3.amazonaws.com/falcross-blog-images/2017/12/demo_opt.gif" alt="" /></p>
+            <p>
+              <img
+                src="https://s3.amazonaws.com/falcross-blog-images/2017/12/demo_opt.gif"
+                alt=""
+              />
+            </p>
 
-<p>In the GIF above we're writing a GET request to the excellent Giphy API using <a href="https://github.com/rawrmaan/restyped-giphy-api">its RESTyped definition</a>. Here are 3 things you may have noticed:</p>
+            <p>
+              In the GIF above we're writing a GET request to the excellent
+              Giphy API using
+              <a href="https://github.com/rawrmaan/restyped-giphy-api"
+                >its RESTyped definition</a
+              >. Here are 3 things you may have noticed:
+            </p>
 
-<ol>
-<li>The editor is auto-suggesting routes available in the API  </li>
-<li>The query params are type checked  </li>
-<li>The <code>res.data</code> object is automagically typed</li>
-</ol>
+            <ol>
+              <li>The editor is auto-suggesting routes available in the API</li>
+              <li>The query params are type checked</li>
+              <li>The <code>res.data</code> object is automagically typed</li>
+            </ol>
 
-<p>Bonus: The API call was made using normal axios syntax.</p>
+            <p>Bonus: The API call was made using normal axios syntax.</p>
 
-<p>When you consume an API with a RESTyped definition, you'll save time jumping back and forth between docs and code, and reduce bugs in the process. It's an easier, safer way to consume APIs.</p>
+            <p>
+              When you consume an API with a RESTyped definition, you'll save
+              time jumping back and forth between docs and code, and reduce bugs
+              in the process. It's an easier, safer way to consume APIs.
+            </p>
 
-<h3 id="stronglytypedroutedefinitions">Strongly typed route definitions</h3>
+            <h3 id="stronglytypedroutedefinitions">
+              Strongly typed route definitions
+            </h3>
 
-<p>If you've written your backend in node.js, you can take advantage of end-to-end typing by creating one RESTyped definition file and sharing it between your server and client.</p>
+            <p>
+              If you've written your backend in node.js, you can take advantage
+              of end-to-end typing by creating one RESTyped definition file and
+              sharing it between your server and client.
+            </p>
 
-<p>Currently, RESTyped supports express.js in the form of <a href="https://github.com/rawrmaan/restyped-express-async">restyped-express-async</a>. Here's what a route definition looks like:</p>
+            <p>
+              Currently, RESTyped supports express.js in the form of
+              <a href="https://github.com/rawrmaan/restyped-express-async"
+                >restyped-express-async</a
+              >. Here's what a route definition looks like:
+            </p>
 
-<script src="https://gist.github.com/rawrmaan/fe52e044c4e7f066f23e53088d1c3374.js"></script>
+            <script src="https://gist.github.com/rawrmaan/fe52e044c4e7f066f23e53088d1c3374.js"></script>
 
-<p>If your server and client don't exist in the same repo, I recommend keeping the RESTyped definition in your server's repo and publishing it as a npm module with <a href="https://github.com/lerna/lerna">lerna</a>.</p>
+            <p>
+              If your server and client don't exist in the same repo, I
+              recommend keeping the RESTyped definition in your server's repo
+              and publishing it as a npm module with
+              <a href="https://github.com/lerna/lerna">lerna</a>.
+            </p>
 
-<h3 id="howitworks">How it works</h3>
+            <h3 id="howitworks">How it works</h3>
 
-<p>You can use RESTyped by creating or importing a RESTyped <a href="https://github.com/rawrmaan/restyped#specification">definition file</a> and using one of the available <a href="https://github.com/rawrmaan/restyped#how-to-use-it">library wrappers</a> to declare and call your routes with strong typing.</p>
+            <p>
+              You can use RESTyped by creating or importing a RESTyped
+              <a href="https://github.com/rawrmaan/restyped#specification"
+                >definition file</a
+              >
+              and using one of the available
+              <a href="https://github.com/rawrmaan/restyped#how-to-use-it"
+                >library wrappers</a
+              >
+              to declare and call your routes with strong typing.
+            </p>
 
-<p>RESTyped is a creative exploitation of TypeScript's <em>keyof/Lookup Types</em> (introduced in 2.1), <em>Generic Parameter Defaults</em> (introduced in 2.3) and improved generic inference (introduced in 2.4). It's actually very simple, and the best way to grok it is to read the <a href="https://github.com/rawrmaan/restyped#specification">spec</a>, <a href="https://github.com/rawrmaan/restyped#full-stack-example">examples</a> and <a href="https://github.com/rawrmaan/restyped-axios/blob/master/index.ts">client implementation</a>.</p>
+            <p>
+              RESTyped is a creative exploitation of TypeScript's
+              <em>keyof/Lookup Types</em> (introduced in 2.1),
+              <em>Generic Parameter Defaults</em> (introduced in 2.3) and
+              improved generic inference (introduced in 2.4). It's actually very
+              simple, and the best way to grok it is to read the
+              <a href="https://github.com/rawrmaan/restyped#specification"
+                >spec</a
+              >,
+              <a href="https://github.com/rawrmaan/restyped#full-stack-example"
+                >examples</a
+              >
+              and
+              <a
+                href="https://github.com/rawrmaan/restyped-axios/blob/master/index.ts"
+                >client implementation</a
+              >.
+            </p>
 
-<p><strong>I highly recommend you use <a href="https://github.com/Microsoft/vscode">Visual Studio Code</a> as your editor for the best experience, as it has the best TypeScript support and auto suggestions available.</strong></p>
+            <p>
+              <strong
+                >I highly recommend you use
+                <a href="https://github.com/Microsoft/vscode"
+                  >Visual Studio Code</a
+                >
+                as your editor for the best experience, as it has the best
+                TypeScript support and auto suggestions available.</strong
+              >
+            </p>
 
-<h3 id="whyrestypedandwhynow">Why RESTyped, and why now</h3>
+            <h3 id="whyrestypedandwhynow">Why RESTyped, and why now</h3>
 
-<p>I've been writing full-stack apps for over 5 years. As I became enamored with TypeScript, I saw potential for creating a project that would give API development the same seamless experience that TypeScript provides for the rest of an application.</p>
+            <p>
+              I've been writing full-stack apps for over 5 years. As I became
+              enamored with TypeScript, I saw potential for creating a project
+              that would give API development the same seamless experience that
+              TypeScript provides for the rest of an application.
+            </p>
 
-<p>Some of the features I needed to make it happen weren't available in TypeScript, however, and it wasn't until version 2.4 that all the pieces fell into place. That's when I started working on RESTyped.</p>
+            <p>
+              Some of the features I needed to make it happen weren't available
+              in TypeScript, however, and it wasn't until version 2.4 that all
+              the pieces fell into place. That's when I started working on
+              RESTyped.
+            </p>
 
-<p>There are other solutions to build typed APIs out there, like GraphQL, but I don't like the idea of wrangling two separate type systems, and I love the simplicity of REST APIs. RESTyped gives you strong typing for your API without re-architecting your whole API layer or making big compromises.</p>
+            <p>
+              There are other solutions to build typed APIs out there, like
+              GraphQL, but I don't like the idea of wrangling two separate type
+              systems, and I love the simplicity of REST APIs. RESTyped gives
+              you strong typing for your API without re-architecting your whole
+              API layer or making big compromises.
+            </p>
 
-<h3 id="whousesthis">Who uses this</h3>
+            <h3 id="whousesthis">Who uses this</h3>
 
-<p>I use RESTyped to save time building <a href="https://www.falcross.com/">Falcross</a>, the world's largest Picross puzzle community. <a href="https://www.tryhabitat.com/">Habitat</a> uses RESTyped to sync their food delivery API with internal and external clients.</p>
+            <p>
+              I use RESTyped to save time building
+              <a href="https://www.falcross.com/">Falcross</a>, the world's
+              largest Picross puzzle community.
+              <a href="https://www.tryhabitat.com/">Habitat</a> uses RESTyped to
+              sync their food delivery API with internal and external clients.
+            </p>
 
-<p>You can also check out the <a href="https://github.com/rawrmaan/restyped-giphy-api">Giphy API definition</a> and use it in your own project!</p>
+            <p>
+              You can also check out the
+              <a href="https://github.com/rawrmaan/restyped-giphy-api"
+                >Giphy API definition</a
+              >
+              and use it in your own project!
+            </p>
 
-<h3 id="furtherreading">Further reading</h3>
+            <h3 id="furtherreading">Further reading</h3>
 
-<p>I'm consistently inspired by the cool TypeScript projects and stories I see around the web. Here are a few of my recent favorites:</p>
+            <p>
+              I'm consistently inspired by the cool TypeScript projects and
+              stories I see around the web. Here are a few of my recent
+              favorites:
+            </p>
 
-<ul>
-<li><a href="https://github.com/Neufund/TypeChain">TypeChain</a> and <a href="https://blog.hellobloom.io/how-typescript-makes-smart-contracts-easier-to-test-and-more-robust-c612a2d99537">Bloom's work</a> to create type-safe Ethereum smart contracts</li>
-<li>This <a href="https://eng.lyft.com/typescript-at-lyft-64f0702346ea">blog post</a> about how Lyft uses TypeScript and their JS-to-TS <a href="https://github.com/lyft/react-javascript-to-typescript-transform">PropTypes converter library</a></li>
-<li><a href="https://github.com/nestjs/nest">Nest.js</a>, a web application framework built in TS with some interesting FP/FRP ideas</li>
-</ul>
+            <ul>
+              <li>
+                <a href="https://github.com/Neufund/TypeChain">TypeChain</a> and
+                <a
+                  href="https://blog.hellobloom.io/how-typescript-makes-smart-contracts-easier-to-test-and-more-robust-c612a2d99537"
+                  >Bloom's work</a
+                >
+                to create type-safe Ethereum smart contracts
+              </li>
+              <li>
+                This
+                <a href="https://eng.lyft.com/typescript-at-lyft-64f0702346ea"
+                  >blog post</a
+                >
+                about how Lyft uses TypeScript and their JS-to-TS
+                <a
+                  href="https://github.com/lyft/react-javascript-to-typescript-transform"
+                  >PropTypes converter library</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/nestjs/nest">Nest.js</a>, a web
+                application framework built in TS with some interesting FP/FRP
+                ideas
+              </li>
+            </ul>
 
-<hr />
+            <hr />
 
-<p>Questions, comments, or feedback? I'd love to hear what you think about RESTyped! Hit me up at <a href="https://www.twitter.com/rawrmaan">@rawrmaan</a> or e-mail me at <a href="../cdn-cgi/l/email-protection.html#7d1c0f101c133d0f1c0a0f101c1c13531e1210"><span class="__cf_email__" data-cfemail="1170637c707f51637066637c70707f3f727e7c">[email&#160;protected]</span></a>.</p>
+            <p>
+              Questions, comments, or feedback? I'd love to hear what you think
+              about RESTyped! Hit me up at
+              <a href="https://www.twitter.com/rawrmaan">@rawrmaan</a> or e-mail
+              me at
+              <a
+                href="../cdn-cgi/l/email-protection.html#7d1c0f101c133d0f1c0a0f101c1c13531e1210"
+                ><span
+                  class="__cf_email__"
+                  data-cfemail="1170637c707f51637066637c70707f3f727e7c"
+                  >[email&#160;protected]</span
+                ></a
+              >.
+            </p>
 
-<p>HN discussion: <a href="https://news.ycombinator.com/item?id=15934289">https://news.ycombinator.com/item?id=15934289</a></p>
-        </section>
+            <p>
+              HN discussion:
+              <a href="https://news.ycombinator.com/item?id=15934289"
+                >https://news.ycombinator.com/item?id=15934289</a
+              >
+            </p>
+          </section>
 
-        <footer class="post-footer">
-
-
+          <footer class="post-footer">
             <figure class="author-image">
-                <a class="img" href="../author/arman/index.html" style="background-image: url(https://www.gravatar.com/avatar/b2ef4ee4f90da54c5ad156e14d2cd6a5?s&)"><span class="hidden">Arman Dezfuli-Arjomandi's Picture</span></a>
+              <a
+                class="img"
+                href="../author/arman"
+                style="
+                  background-image: url(https://www.gravatar.com/avatar/b2ef4ee4f90da54c5ad156e14d2cd6a5?s&);
+                "
+                ><span class="hidden"
+                  >Arman Dezfuli-Arjomandi's Picture</span
+                ></a
+              >
             </figure>
 
             <section class="author">
-                <h4><a href="../author/arman/index.html">Arman Dezfuli-Arjomandi</a></h4>
+              <h4><a href="../author/arman">Arman Dezfuli-Arjomandi</a></h4>
 
-                    <p>Read <a href="../author/arman/index.html">more posts</a> by this author.</p>
-                <div class="author-meta">
-                    <span class="author-location icon-location">Philadelphia, PA</span>
-                    <span class="author-link icon-link"><a href="https://www.rawrmaan.com/">https://www.rawrmaan.com/</a></span>
-                </div>
+              <p>
+                Read <a href="../author/arman">more posts</a> by this author.
+              </p>
+              <div class="author-meta">
+                <span class="author-location icon-location"
+                  >Philadelphia, PA</span
+                >
+                <span class="author-link icon-link"
+                  ><a href="https://www.rawrmaan.com/"
+                    >https://www.rawrmaan.com/</a
+                  ></span
+                >
+              </div>
             </section>
-
 
             <section class="share">
-                <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Introducing%20RESTyped%3A%20End-to-end%20typing%20for%20REST%20APIs%20with%20TypeScript&amp;url=https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/"
-                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                    <span class="hidden">Twitter</span>
-                </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <span class="hidden">Facebook</span>
-                </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/"
-                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                    <span class="hidden">Google+</span>
-                </a>
+              <h4>Share this post</h4>
+              <a
+                class="icon-twitter"
+                href="https://twitter.com/intent/tweet?text=Introducing%20RESTyped%3A%20End-to-end%20typing%20for%20REST%20APIs%20with%20TypeScript&amp;url=https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"
+              >
+                <span class="hidden">Twitter</span>
+              </a>
+              <a
+                class="icon-facebook"
+                href="https://www.facebook.com/sharer/sharer.php?u=https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/"
+                onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"
+              >
+                <span class="hidden">Facebook</span>
+              </a>
+              <a
+                class="icon-google-plus"
+                href="https://plus.google.com/share?url=https://blog.falcross.com/introducing-restyped-end-to-end-typing-for-rest-apis-with-typescript/"
+                onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"
+              >
+                <span class="hidden">Google+</span>
+              </a>
             </section>
+          </footer>
+        </article>
+      </main>
 
+      <aside class="read-next">
+        <a
+          class="read-next-story prev no-cover"
+          href="../update-5-13-0-redesigned-profiles-leaderboards-notification-improvements"
+        >
+          <section class="post">
+            <h2>
+              Update 5.13.0: Redesigned profiles &amp; leaderboards,
+              notification improvements
+            </h2>
+            <p>
+              Coming in hot just over a week after the last release, this update
+              contains some Online-focused improvements to improve&hellip;
+            </p>
+          </section>
+        </a>
+      </aside>
 
-        </footer>
-
-    </article>
-</main>
-
-<aside class="read-next">
-    <a class="read-next-story prev no-cover" href="../update-5-13-0-redesigned-profiles-leaderboards-notification-improvements/index.html">
-        <section class="post">
-            <h2>Update 5.13.0: Redesigned profiles &amp; leaderboards, notification improvements</h2>
-            <p>Coming in hot just over a week after the last release, this update contains some Online-focused improvements to improve&hellip;</p>
+      <footer class="site-footer clearfix">
+        <section class="copyright">
+          <a href="../index.html">Falcross Blog</a> &copy; 2022
         </section>
-    </a>
-</aside>
-
-
-
-        <footer class="site-footer clearfix">
-            <section class="copyright"><a href="../index.html">Falcross Blog</a> &copy; 2022</section>
-            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
-        </footer>
-
+        <section class="poweredby">
+          Proudly published with <a href="https://ghost.org">Ghost</a>
+        </section>
+      </footer>
     </div>
 
-    <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js%3Fv=91b48e4ba8"></script>
-    <script type="text/javascript" src="../assets/js/index.js%3Fv=91b48e4ba8"></script>
+    <script
+      data-cfasync="false"
+      src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.12.0.min.js"
+    ></script>
 
-</body>
+    <script
+      type="text/javascript"
+      src="../assets/js/jquery.fitvids.js%3Fv=91b48e4ba8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../assets/js/index.js%3Fv=91b48e4ba8"
+    ></script>
+  </body>
 </html>
